@@ -1,19 +1,26 @@
 <?php
   // echo "Ispis <br>";
-  // $ime = "Marko Markovic";
+  // $ime = "Marko Markovic 8";
   // echo strlen($ime) . "<br>";
   // echo "Pozicija na kojem pocinje ime " . strpos($ime, "Markovic") . "<br>";
+  // echo "pozicija" . strpos($ime, "a") . "<br>";
   // $hello = "Hello World";
   // echo "Pozicija na kojoj pocinje World " . strpos($hello, "l") . "<br>";
   // echo "Sub string je: " . substr($hello, 6, 2) . "<br>";
+  // echo "<br> result is: " . substr($hello, 2, 2) . "<br>";
   // echo "Random number: " . rand(5, 16) . "<br>";
+  // echo "<br> result is: " . rand(2, 3) . "<br>";
   // echo "<br>" . "Datum: " . date("d.m.Y. H:i:s");
+  // echo "<br> result is: " . date("D") . "<br>";
   // echo "<br>" . "Only month: " . date("m");
   // echo "<br>" . "To uppercase: " . strtoupper($hello);
+  // echo "<br> result is: " . strtoupper("dfsfEEE dfdsf") . "<br>";
   // echo "<br>" . "To lowercase: " . strtolower("toBE Beld");
   // echo "<br>" . "Smething: " . date("H");
   // $nizBrojeva = array(1, 2, 3, 4, 5, 6, "hello", false);
+  // echo "<br> result is: " . join(' ', array("ddd", 2)) . implode(array(' ', 1, 2, 3)) . "<br>";
   // echo "<br>" . "Count number of items in array: " . count($nizBrojeva);
+  // echo "<br> result is: " . count(array('44', '44', 3)) . "<br>";
  
   // function pozdrav($ime) {
   //   $pozdravnaPoruka = "Pozdrav, " . $ime . "!";
@@ -96,28 +103,28 @@
   //   echo $broj . "<br>";
   // }
 
-  // class Osoba {
-  //   public $ime;
-  //   public $prezime;
-  // }
+  class Osoba {
+    public $ime;
+    public $prezime;
+  }
 
-  // $osoba = new Osoba();
-  // $osoba->ime = "Jasmin";
-  // $osoba->prezime = "Adilovic";
+  $osoba = new Osoba();
+  $osoba->ime = "Jasmin";
+  $osoba->prezime = "Adilovic";
 
-  // foreach ($osoba as $key => $value) {
-  //   echo $key . ": " . $value . "<br>";
-  // }
+  foreach ($osoba as $key => $value) {
+    echo $key . ": " . $value . "<br>";
+  }
 
-  //  foreach ($osoba as $key => $value) {
-  //   echo "$key: $value <br>";
-  // }
+   foreach ($osoba as $key => $value) {
+    echo "$key: $value <br>";
+  }
 
-  // $asocijativniNiz = array("ime" => "Jasmin", "prezime" => "Adilovic");
+  $asocijativniNiz = array("ime" => "Jasmin", "prezime" => "Adilovic");
 
-  // foreach ($asocijativniNiz as $key => $value) {
-  //   echo "$key: $value <br>";
-  // }
+  foreach ($asocijativniNiz as $key => $value) {
+    echo "$key: $value <br>";
+  }
 
   $num = 0;
 
@@ -166,5 +173,43 @@
       break;
   }
 
+  class Animal {
+    public $ime;
+    public $age;
+
+    function getAnimal() {
+      return $this->ime . " " . $this->age;
+    }
+  }
+
+  $anim = new Animal();
+  $anim->ime = 'Wolf';
+  $anim->age = 2;
+  echo "<br> " . $anim->getAnimal();
+
+  $strArr = array();
+
+  function isPalindrome($text, $strArr) {
+   for ($i=0; $i < count(str_split($text)); $i++) {
+      if (ctype_alnum($text[$i])) {
+        array_push($strArr, $text[$i]);
+      }
+   }
+   $regString = strtolower(implode('', $strArr));
+   $revString = strrev($regString);
+    echo "<br>" . $regString;
+     echo "<br>" . $revString;
+
+     return $regString == $revString ? 'true' : 'false';
+   }
+
+  isPalindrome("ddd 444 55 9", $strArr);
+
+
+
+  isPalindrome("ths", $strArr);
+
+   echo "<br> is palindrome: " . isPalindrome("A man, a plan, a canal, Panama!", $strArr);
+   echo "<br> is palindrome: " . isPalindrome("Hello World", $strArr);
 
 ?>
