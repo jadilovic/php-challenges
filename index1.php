@@ -22,7 +22,7 @@
       echo $age * $price . "</br>";
       echo $sports["log"] . "</br>";
 
-      class Osoba {
+      class OsobaOld {
         public $ime;
         public $prezime;
         public $total;
@@ -36,7 +36,7 @@
         }
       }
 
-      $osoba = new Osoba();
+      $osoba = new OsobaOld();
       $osoba->ime = "Marko";
       $osoba->prezime = "Kovacevic";
       $osoba->total = 88;
