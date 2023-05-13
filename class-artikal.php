@@ -34,4 +34,31 @@ foreach($arrayArtikal as $artikal) {
   $artikal->ispisiArtikal();
 }
 
+
+class Animal {
+  public $name;
+  public $food;
+  public $noise;
+
+  public function __construct($name, $food, $noise) {
+    $this->name = $name;
+    $this->food = $food;
+    $this->noise = $noise;
+  }
+
+  public function animalProperties() {
+    echo "<br> This animal is " . $this->name . ", likes to eat " . $this->food . " and makes noise " . $this->noise . ".";
+  }
+}
+
+$animal1 = new Animal('Boby', 'Meat', 'WouWou');
+$animal1->animalProperties();
+
+class Cat extends Animal {
+  public $color;
+
+  public function __construct($name, $food, $noise, $color) {
+
+  }
+}
 ?>
